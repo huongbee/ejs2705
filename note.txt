@@ -1,0 +1,7 @@
+npm: 
+1. npm install packet_name
+2. npm update
+
+yarn: 
+1. yarn add packet_name
+2. yarn install
