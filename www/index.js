@@ -2,10 +2,10 @@
 // const app = express()
 const app = require('express')();
 const bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended:true }))
-app.use(bodyParser.json({
-    type: 'application/json'
-}))
+app.use(bodyParser.urlencoded({ extended:true }))
+// app.use(bodyParser.json({
+//     type: 'application/json'
+// }))
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
@@ -21,9 +21,9 @@ app.post('/login', (req, res) => {
     console.log(req.body)
     // const email = req.body.email;
     // const password = req.body.password;
-    const { email, password }  = req.body;
+    const { email, password, role, avatar }  = req.body;
     res.setHeader('token', '1234567');
-    res.send({ name: 'name', email, password });
+    res.send({ name: 'name', email, password, role, avatar });
 });
 
 app.listen(3000, () => console.log('Server started on port 3000!'))
